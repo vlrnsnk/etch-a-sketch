@@ -15,6 +15,18 @@ const drawCells = (size) => {
   }
 }
 
+const getRandomColor = () => {
+  let color = '#';
+
+  for (let i = 0; i < 6; i++) {
+    color += Math.floor(Math.random() * 16).toString(16);
+  }
+
+  return color;
+};
+
 let size = 10;
 
 drawCells(size);
+console.log(getRandomColor());
+console.log(Array(6).fill())
