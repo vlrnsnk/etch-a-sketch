@@ -9,7 +9,13 @@
   </head>
   <body>
     <h1>Etch-A-Sketch</h1>
-    <button id="size-setter">Change sketch pad size (max - 100):</button>
+    <div class="settings">
+      <button id="size-setter">Change sketch pad size (max - 100):</button>
+      <label for="fade">
+        <input id="fade" type="checkbox">
+        Fade to Black Mode
+      </label>
+    </div>
     <div id="app"></div>
     <script src="./script.js"></script>
   </body>

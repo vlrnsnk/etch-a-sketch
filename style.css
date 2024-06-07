@@ -11,6 +11,28 @@ h1 {
   text-align: center;
 }
 
+.settings {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#size-setter {
+  display: block;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 auto 12px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 12px;
+  padding: 12px;
+}
+
+
 #app {
   display: flex;
   flex-wrap: wrap;
@@ -22,12 +44,4 @@ h1 {
 
 .cell {
   background-color: white;
-}
-
-#size-setter {
-  display: block;
-  padding: 24px;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0 auto 12px;
 }

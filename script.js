@@ -1,5 +1,6 @@
 const appEl = document.querySelector('#app');
 const buttonEl = document.querySelector('#size-setter');
+const fadeEl = document.querySelector('#fade');
 const sketchPadWidth = 960;
 appEl.style.width = `${sketchPadWidth}px`;
 
@@ -26,8 +27,28 @@ const getRandomColor = () => {
 };
 
 const changeCellColor = (event) => {
-  if (event.target.id !== 'app') {
-    event.target.style.backgroundColor = getRandomColor();
+  const targetCell = event.target;
+
+  if (targetCell.id === 'app') {
+    return;
+  }
+
+  const isFadeMode = fadeEl.checked;
+
+  if (isFadeMode) {
+    if (!targetCell.style.backgroundColor) {
+      targetCell.style.backgroundColor = getRandomColor();
+    } else {
+      const currentOpacity = targetCell.style.opacity;
+
+      if (currentOpacity === '') {
+        targetCell.style.opacity = '0.9';
+      } else if (currentOpacity > 0) {
+        targetCell.style.opacity = `${targetCell.style.opacity - 0.1}`;
+      }
+    }
+  } else {
+    targetCell.style.backgroundColor = getRandomColor();
   }
 };
 
