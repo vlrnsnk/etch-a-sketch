@@ -1,19 +1,27 @@
 :root {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
+}
+
+body {
+  /*min-width: 320px;*/
+}
+
+h1 {
+  text-align: center;
 }
 
 #app {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  max-width: 860px;
+  /*max-width: 860px;*/
   margin: 0 auto;
+  border: 1px solid black;
+  gap: 1px;
+  background-color: black;
 }
 
-.grid-item {
-  flex: 1 0 200px;
-  background-color: green;
-  height: 200px;
+.cell {
+  background-color: white;
 }

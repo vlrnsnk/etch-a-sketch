@@ -1,7 +1,20 @@
 const appEl = document.querySelector('#app');
+const sketchPadWidth = 960;
+appEl.style.width = `${sketchPadWidth}px`;
 
-for (let i = 0; i < 16; i++) {
-  const div = document.createElement('div');
-  div.className = 'grid-item';
-  appEl.appendChild(div);
+const drawCells = (size) => {
+  appEl.innerHTML = '';
+  const cellSize = (sketchPadWidth - size + 1) / size;
+
+  for (let i = 0; i < size ** 2; i++) {
+    const div = document.createElement('div');
+    div.className = 'cell';
+    div.style.flex = `0 0 ${cellSize}px`;
+    div.style.height = `${cellSize}px`;
+    appEl.appendChild(div);
+  }
 }
+
+let size = 10;
+
+drawCells(size);
