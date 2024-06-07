@@ -66,4 +66,5 @@ let size = 10;
 drawCells(size);
 
 appEl.addEventListener('mouseover', changeCellColor);
+appEl.addEventListener('touchstart', changeCellColor);
 buttonEl.addEventListener('click', setSize);
