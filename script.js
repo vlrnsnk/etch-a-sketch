@@ -24,7 +24,14 @@ const getRandomColor = () => {
     );
 };
 
+const changeCellColor = (event) => {
+  if (event.target.id !== 'app') {
+    event.target.style.backgroundColor = getRandomColor();
+  }
+};
+
+appEl.addEventListener('mouseover', changeCellColor);
+
 let size = 10;
 
 drawCells(size);
-console.log(getRandomColor());
