@@ -1,4 +1,5 @@
 const appEl = document.querySelector('#app');
+const buttonEl = document.querySelector('#size-setter');
 const sketchPadWidth = 960;
 appEl.style.width = `${sketchPadWidth}px`;
 
@@ -30,8 +31,18 @@ const changeCellColor = (event) => {
   }
 };
 
-appEl.addEventListener('mouseover', changeCellColor);
+const setSize = () => {
+  let sketchPadSize = Number(prompt('Set new sketch pad size (max - 100):', '4'));
+
+  while (!(Number.isInteger(sketchPadSize)) || sketchPadSize > 100 || sketchPadSize < 1) {
+    sketchPadSize = Number(prompt('Incorrect input! Set new sketch pad size (max - 100):', '4'));
+  }
+
+  drawCells(sketchPadSize);
+};
 
 let size = 10;
-
 drawCells(size);
+
+appEl.addEventListener('mouseover', changeCellColor);
+buttonEl.addEventListener('click', setSize);

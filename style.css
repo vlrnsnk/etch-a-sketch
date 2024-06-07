@@ -1,11 +1,10 @@
 :root {
   margin: 0;
   padding: 0;
-  /*box-sizing: border-box;*/
 }
 
 body {
-  /*min-width: 320px;*/
+  background-color: lightgray;
 }
 
 h1 {
@@ -15,7 +14,6 @@ h1 {
 #app {
   display: flex;
   flex-wrap: wrap;
-  /*max-width: 860px;*/
   margin: 0 auto;
   border: 1px solid black;
   gap: 1px;
@@ -24,4 +22,12 @@ h1 {
 
 .cell {
   background-color: white;
+}
+
+#size-setter {
+  display: block;
+  padding: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 auto 12px;
 }
